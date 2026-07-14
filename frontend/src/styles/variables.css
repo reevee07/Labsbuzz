@@ -1,0 +1,107 @@
+/* =========================================================================
+   Labsbuzz Design Tokens
+   Extending the exact visual language from the original homepage:
+   - Inter typeface
+   - Blue -> Cyan gradient brand identity (#1a4cff -> #00c6ff)
+   - Soft glassmorphism, pill shapes, floating gradient orbs
+   ========================================================================= */
+:root {
+  /* Brand colors */
+  --color-primary: #1a4cff;
+  --color-primary-dark: #1243e8;
+  --color-accent: #00c6ff;
+  --color-accent-2: #00d4ff;
+  --color-accent-3: #00a6ff;
+  --color-purple: #a855f7;
+  --color-teal: #00ffcc;
+
+  --gradient-primary: linear-gradient(135deg, #1a4cff, #00c6ff);
+  --gradient-primary-hover: linear-gradient(135deg, #1a4cff 0%, #00c6ff 100%);
+  --gradient-bg: linear-gradient(135deg, #e0f2ff, #f4f9ff, #e6f7ff);
+  --gradient-conic: conic-gradient(
+    from 0deg,
+    #00ffcc,
+    #00c6ff,
+    #1a4cff,
+    #a855f7,
+    #00c6ff,
+    #00ffcc
+  );
+
+  /* Neutrals / text */
+  --color-text: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #555555;
+  --color-text-faint: #7a7a7a;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-border-light: rgba(255, 255, 255, 0.4);
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-glass: rgba(255, 255, 255, 0.6);
+  --color-surface-glass-strong: rgba(255, 255, 255, 0.85);
+  --color-surface-muted: #f6f9fc;
+
+  /* Status colors */
+  --color-success: #16a34a;
+  --color-success-bg: #ecfdf3;
+  --color-warning: #d97706;
+  --color-warning-bg: #fffbeb;
+  --color-danger: #dc2626;
+  --color-danger-bg: #fef2f2;
+  --color-info: var(--color-primary);
+  --color-info-bg: #eef4ff;
+
+  /* Elevation */
+  --shadow-sm: 0 4px 16px rgba(26, 76, 255, 0.08);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
+  --shadow-glow: 0 8px 32px rgba(0, 180, 255, 0.35), 0 0 20px rgba(0, 198, 255, 0.25);
+
+  /* Radii */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-pill: 999px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-base: 16px;
+  --fs-md: 18px;
+  --fs-lg: 22px;
+  --fs-xl: 28px;
+  --fs-2xl: 36px;
+  --fs-3xl: 44px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Layout */
+  --container-max: 1320px;
+  --nav-height: 76px;
+  --sidebar-width: 260px;
+
+  /* z-index scale */
+  --z-base: 1;
+  --z-nav: 10;
+  --z-dropdown: 20;
+  --z-modal: 50;
+  --z-toast: 60;
+}

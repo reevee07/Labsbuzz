@@ -1,0 +1,143 @@
+.lb-labcard {
+  display: grid;
+  grid-template-columns: 72px 1fr auto auto;
+  align-items: center;
+  gap: var(--space-6);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-5) var(--space-6);
+  margin-bottom: var(--space-4);
+  transition: var(--transition-base);
+}
+
+.lb-labcard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.lb-labcard__logo {
+  width: 72px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-muted);
+  font-weight: 800;
+  color: var(--color-text-faint);
+}
+
+.lb-labcard__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lb-labcard__info {
+  min-width: 0;
+}
+
+.lb-labcard__title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.lb-labcard__title-row h3 {
+  margin: 0;
+  font-size: var(--fs-md);
+  font-weight: 700;
+}
+
+.lb-labcard__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #f5a623;
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+.lb-labcard__meta {
+  display: flex;
+  gap: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-sm);
+  margin: 4px 0 8px;
+}
+
+.lb-labcard__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lb-labcard__report {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.lb-labcard__report-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: var(--color-text-faint);
+}
+
+.lb-labcard__report-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+.lb-labcard__action {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.lb-labcard__price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lb-labcard__strike {
+  color: var(--color-text-faint);
+  text-decoration: line-through;
+  font-size: var(--fs-sm);
+}
+
+@media (max-width: 720px) {
+  .lb-labcard {
+    grid-template-columns: 56px 1fr;
+    grid-template-areas:
+      'logo info'
+      'report action';
+    row-gap: var(--space-3);
+  }
+  .lb-labcard__logo {
+    grid-area: logo;
+    width: 56px;
+  }
+  .lb-labcard__info {
+    grid-area: info;
+  }
+  .lb-labcard__report {
+    grid-area: report;
+  }
+  .lb-labcard__action {
+    grid-area: action;
+    align-items: flex-end;
+  }
+}

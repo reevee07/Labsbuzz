@@ -1,0 +1,38 @@
+.lb-hero {
+  padding: var(--space-16) 0 var(--space-12);
+  position: relative;
+  z-index: 1;
+}
+
+.lb-hero__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-top: var(--space-12);
+}
+
+.lb-hero__title {
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--color-text);
+  max-width: 720px;
+  margin: 0;
+}
+
+.lb-hero__title--accent {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (max-width: 768px) {
+  .lb-hero {
+    padding: var(--space-10) 0 var(--space-8);
+  }
+  .lb-hero__title {
+    font-size: var(--fs-2xl);
+  }
+}

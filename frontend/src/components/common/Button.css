@@ -1,0 +1,117 @@
+.lb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+    background var(--transition-fast), color var(--transition-fast),
+    border-color var(--transition-fast);
+  border: 1.5px solid transparent;
+  line-height: 1;
+}
+
+.lb-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.lb-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.lb-btn--sm {
+  padding: 8px 18px;
+  font-size: var(--fs-sm);
+}
+.lb-btn--md {
+  padding: 12px 26px;
+  font-size: var(--fs-base);
+}
+.lb-btn--lg {
+  padding: 16px 34px;
+  font-size: var(--fs-md);
+}
+
+.lb-btn--full {
+  width: 100%;
+}
+
+/* Variants */
+.lb-btn--primary {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+}
+.lb-btn--primary:hover:not(:disabled) {
+  box-shadow: 0 12px 36px rgba(0, 150, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.lb-btn--secondary {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+.lb-btn--secondary:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.lb-btn--outline {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.lb-btn--outline:hover:not(:disabled) {
+  background: rgba(26, 76, 255, 0.08);
+}
+
+.lb-btn--ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+}
+.lb-btn--ghost:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.lb-btn--danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border-color: rgba(220, 38, 38, 0.2);
+}
+.lb-btn--danger:hover:not(:disabled) {
+  background: var(--color-danger);
+  color: #fff;
+}
+
+.lb-btn__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.lb-btn__spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  animation: lb-spin 0.7s linear infinite;
+}
+
+.lb-btn--outline .lb-btn__spinner,
+.lb-btn--ghost .lb-btn__spinner,
+.lb-btn--secondary .lb-btn__spinner {
+  border: 2px solid rgba(26, 76, 255, 0.25);
+  border-top-color: var(--color-primary);
+}
+
+@keyframes lb-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

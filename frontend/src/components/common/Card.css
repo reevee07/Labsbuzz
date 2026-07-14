@@ -1,0 +1,16 @@
+.lb-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.lb-card--padded {
+  padding: var(--space-6);
+}
+
+.lb-card--hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}

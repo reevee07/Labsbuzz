@@ -1,0 +1,129 @@
+.lb-navbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-nav);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.lb-navbar__inner {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.lb-navbar__logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.lb-navbar__logo-mark {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.lb-navbar__logo-labs {
+  color: var(--color-primary);
+}
+
+.lb-navbar__logo-buzz {
+  color: var(--color-text);
+}
+
+.lb-navbar__tagline {
+  margin-top: 2px;
+  font-size: var(--fs-xs);
+  color: var(--color-text-faint);
+  font-weight: 500;
+}
+
+.lb-navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.lb-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.lb-pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.lb-pill--cta {
+  background: var(--gradient-primary);
+  border: none;
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+  padding: 12px 20px;
+}
+
+.lb-pill--cta:hover {
+  color: #fff;
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.lb-navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+}
+
+.lb-navbar__toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+}
+
+@media (max-width: 960px) {
+  .lb-navbar__tagline {
+    display: none;
+  }
+
+  .lb-navbar__actions {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-4);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition-base);
+  }
+
+  .lb-navbar__actions--open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lb-navbar__toggle {
+    display: flex;
+  }
+}
