@@ -15,7 +15,7 @@ const HomePage = () => (
         <h1 className="lb-hero__title">
           Get the best deals on test/scans
           <br />
-          <span className="lb-hero__title--accent">from Certified Labs</span>
+          <span className="lb-hero__title--accent">from certified labs</span>
         </h1>
         <SearchBar autoFocus />
       </div>
