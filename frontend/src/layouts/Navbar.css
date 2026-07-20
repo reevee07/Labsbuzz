@@ -69,17 +69,18 @@
 }
 
 .lb-pill--cta {
-  background: var(--gradient-primary);
-  border: none;
-  color: #fff;
-  box-shadow: var(--shadow-glow);
-  padding: 12px 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  box-shadow: none;
+  padding: 10px 18px;
 }
 
 .lb-pill--cta:hover {
-  color: #fff;
-  filter: brightness(1.05);
-  transform: translateY(-1px);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  filter: none;
+  transform: none;
 }
 
 .lb-navbar__toggle {
