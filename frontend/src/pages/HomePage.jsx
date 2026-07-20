@@ -13,9 +13,9 @@ const HomePage = () => (
     <section className="lb-hero">
       <div className="container lb-hero__inner">
         <h1 className="lb-hero__title">
-          Get The Best Deals On Test/Scans
+          Get the best deals on test/scans
           <br />
-          <span className="lb-hero__title--accent">From Certified Labs</span>
+          <span className="lb-hero__title--accent">from Certified Labs</span>
         </h1>
         <SearchBar autoFocus />
       </div>
