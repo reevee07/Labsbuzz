@@ -1,3 +1,4 @@
+// frontend/src/services/authService.js
 import apiClient, { setAccessToken } from './apiClient';
 
 export const registerUser = async (payload) => {
@@ -8,6 +9,12 @@ export const registerUser = async (payload) => {
 
 export const loginUser = async (payload) => {
   const { data } = await apiClient.post('/auth/login', payload);
+  setAccessToken(data.data.accessToken);
+  return data.data;
+};
+
+export const googleAuth = async ({ credential, role = 'customer' }) => {
+  const { data } = await apiClient.post('/auth/google', { credential, role });
   setAccessToken(data.data.accessToken);
   return data.data;
 };

@@ -1,3 +1,4 @@
+// backend/src/controllers/authController.js
 const authService = require('../services/authService');
 const catchAsync = require('../utils/catchAsync');
 const { sendResponse } = require('../utils/apiResponse');
@@ -13,6 +14,15 @@ const login = catchAsync(async (req, res) => {
   const { user, accessToken, refreshToken } = await authService.login(req.body);
   setRefreshCookie(res, refreshToken);
   sendResponse(res, 200, { user, accessToken }, 'Logged in successfully');
+});
+
+const googleAuth = catchAsync(async (req, res) => {
+  const { user, accessToken, refreshToken } = await authService.googleAuth(
+    req.body.credential,
+    req.body.role
+  );
+  setRefreshCookie(res, refreshToken);
+  sendResponse(res, 200, { user, accessToken }, 'Signed in with Google successfully');
 });
 
 const refresh = catchAsync(async (req, res) => {
@@ -50,6 +60,7 @@ const updateMe = catchAsync(async (req, res) => {
 module.exports = {
   register,
   login,
+  googleAuth,
   refresh,
   logout,
   forgotPassword,

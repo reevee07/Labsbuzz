@@ -77,3 +77,33 @@
   color: var(--color-primary);
   font-weight: 600;
 }
+
+/* frontend/src/components/auth/AuthCard.css — append */
+.lb-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-5) 0;
+  color: var(--color-text-faint);
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lb-auth-divider::before,
+.lb-auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.lb-google-auth {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lb-google-auth__btn > div {
+  width: 100% !important;
+}

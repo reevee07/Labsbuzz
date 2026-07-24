@@ -1,3 +1,4 @@
+// backend/src/schemas/authSchemas.js
 const { z } = require('zod');
 
 const registerSchema = z.object({
@@ -28,10 +29,16 @@ const refreshTokenSchema = z.object({
   refreshToken: z.string().min(10).optional(),
 });
 
+const googleAuthSchema = z.object({
+  credential: z.string().min(20, 'Invalid Google credential'),
+  role: z.enum(['customer', 'lab_owner']).optional().default('customer'),
+});
+
 module.exports = {
   registerSchema,
   loginSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
   refreshTokenSchema,
+  googleAuthSchema,
 };

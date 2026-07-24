@@ -1,3 +1,4 @@
+// frontend/src/App.jsx
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
@@ -8,6 +9,7 @@ import Spinner from './components/common/Spinner';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const SearchResultsPage = lazy(() => import('./pages/SearchResultsPage'));
+const SupportPage = lazy(() => import('./pages/SupportPage'));
 const LoginPage = lazy(() => import('./pages/auth/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/auth/RegisterPage'));
 const ForgotPasswordPage = lazy(() => import('./pages/auth/ForgotPasswordPage'));
@@ -46,6 +48,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchResultsPage />} />
+          <Route path="/support" element={<SupportPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forgot-password" element={<ForgotPasswordPage />} />

@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import AuthCard from '../../components/auth/AuthCard';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
+import GoogleAuthButton from '../../components/auth/GoogleAuthButton';
 
 const LoginPage = () => {
   const { login } = useAuth();
@@ -72,6 +73,8 @@ const LoginPage = () => {
           Sign In
         </Button>
       </form>
+      <div className="lb-auth-divider"><span>or</span></div>
+        <GoogleAuthButton role="customer" expectedRole="customer" redirectTo="/dashboard" />
     </AuthCard>
   );
 };

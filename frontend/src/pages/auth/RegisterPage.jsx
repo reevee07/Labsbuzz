@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import AuthCard from '../../components/auth/AuthCard';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
+import GoogleAuthButton from '../../components/auth/GoogleAuthButton';
 
 // Mirrors backend/src/schemas/authSchemas.js registerSchema exactly,
 // so the user sees the same validation instantly instead of a round-trip.
@@ -101,6 +102,8 @@ const RegisterPage = () => {
           Create Account
         </Button>
       </form>
+      <div className="lb-auth-divider"><span>or</span></div>
+        <GoogleAuthButton role="customer" redirectTo="/dashboard" />
     </AuthCard>
   );
 };

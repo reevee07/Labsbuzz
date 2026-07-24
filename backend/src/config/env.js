@@ -1,9 +1,6 @@
+// backend/src/config/env.js
 require('dotenv').config();
 
-/**
- * Centralized, validated environment configuration.
- * Fail fast on boot if critical vars are missing (except in test env).
- */
 const required = [
   'SUPABASE_URL',
   'SUPABASE_SERVICE_ROLE_KEY',
@@ -20,6 +17,10 @@ if (process.env.NODE_ENV !== 'test') {
         'The server will start but related features will fail until configured.'
     );
   }
+  if (!process.env.GOOGLE_CLIENT_ID) {
+    // eslint-disable-next-line no-console
+    console.warn('[env] GOOGLE_CLIENT_ID not set. Google sign-in will fail until configured.');
+  }
 }
 
 const env = {
@@ -35,6 +36,8 @@ const env = {
   JWT_REFRESH_SECRET: process.env.JWT_REFRESH_SECRET,
   JWT_ACCESS_EXPIRES_IN: process.env.JWT_ACCESS_EXPIRES_IN || '15m',
   JWT_REFRESH_EXPIRES_IN: process.env.JWT_REFRESH_EXPIRES_IN || '7d',
+
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
 
   RATE_LIMIT_WINDOW_MS: parseInt(process.env.RATE_LIMIT_WINDOW_MS, 10) || 900000,
   RATE_LIMIT_MAX: parseInt(process.env.RATE_LIMIT_MAX, 10) || 200,

@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import AuthCard from '../../components/auth/AuthCard';
 import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
+import GoogleAuthButton from '../../components/auth/GoogleAuthButton';
 
 /**
  * Same auth backend as customer login (login has no role param) —
@@ -79,6 +80,8 @@ const LabOwnerLoginPage = () => {
           Sign In
         </Button>
       </form>
+      <div className="lb-auth-divider"><span>or</span></div>
+        <GoogleAuthButton role="lab_owner" expectedRole="lab_owner" redirectTo="/lab-owner/dashboard" />
     </AuthCard>
   );
 };

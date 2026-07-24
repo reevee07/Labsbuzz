@@ -1,7 +1,9 @@
+// frontend/src/context/AuthContext.jsx
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import {
   loginUser,
   registerUser,
+  googleAuth,
   logoutUser,
   refreshSession,
   getMyProfile,
@@ -50,6 +52,13 @@ export const AuthProvider = ({ children }) => {
     return data.user;
   }, []);
 
+  const googleLogin = useCallback(async ({ credential, role }) => {
+    setError(null);
+    const data = await googleAuth({ credential, role });
+    setUser(data.user);
+    return data.user;
+  }, []);
+
   const logout = useCallback(async () => {
     try {
       await logoutUser();
@@ -72,11 +81,12 @@ export const AuthProvider = ({ children }) => {
       error,
       login,
       register,
+      googleLogin,
       logout,
       refreshProfile,
       setUser,
     }),
-    [user, isLoading, error, login, register, logout, refreshProfile]
+    [user, isLoading, error, login, register, googleLogin, logout, refreshProfile]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

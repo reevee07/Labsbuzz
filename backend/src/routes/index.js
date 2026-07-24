@@ -1,3 +1,4 @@
+// backend/src/routes/index.js
 const express = require('express');
 
 const authRoutes = require('./authRoutes');
@@ -9,6 +10,7 @@ const dashboardRoutes = require('./dashboardRoutes');
 const favoriteRoutes = require('./favoriteRoutes');
 const reviewRoutes = require('./reviewRoutes');
 const notificationRoutes = require('./notificationRoutes');
+const supportRoutes = require('./supportRoutes');
 
 const router = express.Router();
 
@@ -25,5 +27,6 @@ router.use('/dashboard', dashboardRoutes);
 router.use('/favorites', favoriteRoutes);
 router.use('/reviews', reviewRoutes);
 router.use('/notifications', notificationRoutes);
+router.use('/support', supportRoutes);
 
 module.exports = router;
